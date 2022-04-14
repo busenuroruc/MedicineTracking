@@ -23,9 +23,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('api')->get('/patient', [PatientController::class, 'index']);
 Route::middleware('api')->post('/patient/new', [PatientController::class, 'store']);
 Route::middleware('api')->post('/patient/update/{id}', [PatientController::class, 'update']);
-Route::middleware('api')->post('/patient/delete/{id}', [PatientController::class, 'destroy']);
+Route::middleware('api')->delete('/patient/delete/{id}', [PatientController::class, 'destroy']);
 
 Route::middleware('api')->get('/medicine', [MedicineController::class, 'index']);
 Route::middleware('api')->post('/medicine/new', [MedicineController::class, 'store']);
 Route::middleware('api')->post('/medicine/update/{id}', [MedicineController::class, 'update']);
-Route::middleware('api')->post('/medicine/delete/{id}', [MedicineController::class, 'destroy']);
+Route::middleware('api')->delete('/medicine/delete/{id}', [MedicineController::class, 'destroy']);
